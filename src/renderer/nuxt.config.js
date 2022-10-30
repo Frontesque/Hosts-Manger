@@ -6,21 +6,20 @@
 
 
 module.exports = {
+  env: {
+
+  },
+  components: true,
+  
   ssr: false,
   target: 'static',
   head: {
-    title: 'hosts-manager',
+    title: 'Hosts Manager',
     meta: [{ charset: "utf-8" }]
   },
   loading: false,
-  plugins: [
-    
-    
-    
-  ],
-  buildModules: [
-    
-  ],
+  plugins: [],
+  buildModules: [],
   modules: [
     '@nuxtjs/vuetify',
   ],
@@ -29,9 +28,10 @@ module.exports = {
       themes: {
         light: {
           primary: '#1867c0',
-          secondary: '#b0bec5',
           accent: '#8c9eff',
           error: '#b71c1c',
+
+          highlight: '#ddd'
         },
       },
     }

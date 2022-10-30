@@ -1,5 +1,11 @@
 <template>
-  <div>
+  <v-app>
     <nuxt />
-  </div>
+  </v-app>
 </template>
+
+<style>
+html,body,#__nuxt,#__layout,.fullHeight {
+  height: 100%;
+}
+</style>
