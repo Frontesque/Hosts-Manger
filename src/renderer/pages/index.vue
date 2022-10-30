@@ -33,8 +33,8 @@
 
     </div>
 
-    <deleteGroup :name="selected.name" :active="showDelete" />
-    <editGroupName :name="selected.name" :active="showEdit" />
+    <deleteGroup   :name="selected.name" :active="showDelete" @cancel="showDelete = false;" @delete="deleteGroup" />
+    <editGroupName :name="selected.name" :active="showEdit"   @cancel="showEdit = false;"   @rename="editGroupName" />
 
   </div>
 </template>
@@ -99,6 +99,17 @@ export default {
     },
     selectGroup(group) {
       this.selected = group;
+    },
+    deleteGroup(group=this.selected) {
+      this.groups.splice(this.groups.indexOf(group), 1);
+      this.selected = this.groups[0] || {};
+      this.showDelete = false;
+    },
+    editGroupName(name) {
+      const selectedIndex = this.groups.indexOf(this.selected);
+      this.groups[selectedIndex].name = name;
+      this.selected = this.groups[selectedIndex];
+      this.showEdit = false;
     }
   },
   mounted() {

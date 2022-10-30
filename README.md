@@ -1,6 +1,6 @@
 <img src="https://github.com/Frontesque/Hosts-Manger/blob/main/build/icons/128x128.png?raw=true" />
 
-# Hosts Manager
+# Hosts File Manager
 Easily manage your `hosts` file on windows using simple groups for different projects
 
 ## Build Setup

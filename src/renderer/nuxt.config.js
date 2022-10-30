@@ -14,7 +14,7 @@ module.exports = {
   ssr: false,
   target: 'static',
   head: {
-    title: 'Hosts Manager',
+    title: 'Hosts File Manager',
     meta: [{ charset: "utf-8" }]
   },
   loading: false,
@@ -25,6 +25,7 @@ module.exports = {
   ],
   vuetify: {
     theme: {
+      dark: true,
       themes: {
         light: {
           primary: '#1867c0',
@@ -32,6 +33,13 @@ module.exports = {
           error: '#b71c1c',
 
           highlight: '#ddd'
+        },
+        dark: {
+          primary: '#1867c0',
+          accent: '#8c9eff',
+          error: '#b71c1c',
+
+          highlight: '#333'
         },
       },
     }

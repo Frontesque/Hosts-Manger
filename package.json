@@ -1,5 +1,5 @@
 {
-  "name": "hosts-manager",
+  "name": "hosts-file-manager",
   "version": "0.0.1",
   "description": "Manage your hosts file with groups",
   "main": "./dist/main/index.js",
