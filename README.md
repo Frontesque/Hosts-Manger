@@ -1,8 +1,9 @@
-# hosts-manager
+<img src="https://github.com/Frontesque/Hosts-Manger/blob/main/build/icons/128x128.png?raw=true" />
 
-> Manage your hosts file with groups
+# Hosts Manager
+Easily manage your `hosts` file on windows using simple groups for different projects
 
-#### Build Setup
+## Build Setup
 
 ``` bash
 # install dependencies
@@ -13,9 +14,4 @@ yarn dev
 
 # build electron application for production
 yarn build
-
 ```
-
----
-
-This project was generated with [electron-nuxt](https://github.com/michalzaq12/electron-nuxt) v1.8.1 using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://github.com/michalzaq12/electron-nuxt/blob/master/README.md).
