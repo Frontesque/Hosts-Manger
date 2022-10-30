@@ -12,7 +12,7 @@
     <div id="hostSettings">
       <center><h2>{{ selected.name }}</h2></center>
       <div style="display: flex; flex-align: center; justify-content: center;">
-        <v-btn v-for="item, i in titleSettings" :key="i" style="min-width: 1.5em; width: 2em;  margin: 0.5em;" elevation="0">
+        <v-btn v-for="item, i in titleSettings" :key="i" style="min-width: 1.5em; width: 2em;  margin: 0.5em;" elevation="0" @click="item.action()">
           <v-icon>{{ item.icon }}</v-icon>
         </v-btn>
       </div>
@@ -20,9 +20,10 @@
       <div style="margin-top: 1em;">
         <center><h3>Entries</h3></center>
         <div style="display: flex;">
-          <v-text-field class="entryBox" label="ip" placeholder="127.0.0.1" outlined />
-          <v-text-field class="entryBox" label="host" placeholder="example.com" outlined />
-          <v-text-field class="entryBox" label="comment" placeholder="my demo rewrite" outlined />
+          <v-text-field class="entryBox" label="Address" placeholder="127.0.0.1" outlined />
+          <v-text-field class="entryBox" label="Host" placeholder="example.com" outlined />
+          <v-text-field class="entryBox" label="Comment" placeholder="my demo rewrite" outlined />
+          <v-btn text style="transform: translatey(17.5%); min-width: 1.5em; width: 2em;"><v-icon>mdi-delete</v-icon></v-btn>
         </div>
         <center>
           <v-btn class="entryButton" elevation="0" color="primary"><v-icon>mdi-plus</v-icon>New</v-btn>
@@ -32,8 +33,21 @@
 
     </div>
 
+    <deleteGroup :name="selected.name" :active="showDelete" />
+    <editGroupName :name="selected.name" :active="showEdit" />
+
   </div>
 </template>
+
+<style>
+.v-input__slot {
+  min-height: 0px !important;
+}
+.v-label {
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+</style>
 
 <style scoped>
 #groups {
@@ -54,6 +68,7 @@
 
 .entryBox {
   margin: 0.5em;
+  min-height: 1em;
 }
 .entryButton {
   text-transform: none;
@@ -64,15 +79,17 @@
 export default {
   data() {
     return {
+      showDelete: false,
+      showEdit: false,
+
       selected: {},
       groups: [
         { name:"test" }
       ],
-
       titleSettings: [
-        { icon: "mdi-pencil" },
+        { icon: "mdi-pencil", action: () => { this.showEdit = true; } },
         { icon: "mdi-lock-open" },
-        { icon: "mdi-delete" }
+        { icon: "mdi-delete", action: () => { this.showDelete = true; } }
       ]
     }
   },
