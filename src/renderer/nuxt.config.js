@@ -25,7 +25,7 @@ module.exports = {
   ],
   vuetify: {
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         light: {
           primary: '#1867c0',
